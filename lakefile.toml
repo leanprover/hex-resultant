@@ -14,12 +14,12 @@ rev = "bf67a5243d68c909bcd059a89fd9d3f1c54ba7d8"
 [[require]]
 name = "HexBasic"
 git = "https://github.com/leanprover/hex-basic.git"
-rev = "0ec35366ca67d3f4d1189cc4c9714805c5c437ec"
+rev = "da8a864cd17ccca780d8c76af403e88585bc4734"
 
 [[require]]
 name = "HexDeterminant"
 git = "https://github.com/leanprover/hex-determinant.git"
-rev = "c293b7e7a6b2b3b7fc94d39a3a16a872799d27db"
+rev = "01c471058f6d7b84c4bc37a2d200f264f356328b"
 
 [[lean_lib]]
 name = "HexResultant"
