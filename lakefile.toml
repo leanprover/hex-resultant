@@ -9,17 +9,17 @@ leanOptions = [
 [[require]]
 name = "HexPoly"
 git = "https://github.com/leanprover/hex-poly.git"
-rev = "1f7f31c7733ee5f0fa30d4a376adfa5125895c29"
+rev = "fd37a81f38b4286e3d4f6b5cf896ed3da0ca3b79"
 
 [[require]]
 name = "HexBasic"
 git = "https://github.com/leanprover/hex-basic.git"
-rev = "a47240943e925951a676d1a1c2f2a615ae68fdef"
+rev = "1a0fff2c8f545753b01cff0d941bf48f945cd299"
 
 [[require]]
 name = "HexDeterminant"
 git = "https://github.com/leanprover/hex-determinant.git"
-rev = "2c122657aee7dcd9f7a619dc0d8971a3415e127a"
+rev = "d542b77b0e9e6796a79efb85dd55e1b815d336bd"
 
 [[lean_lib]]
 name = "HexResultant"
