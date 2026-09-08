@@ -103,11 +103,13 @@ instance [DecidableEq R] (a b : Fraction.Rep R) : Decidable (Rel a b) :=
     infer_instance
 
 /-- Product of two representatives. -/
+@[expose]
 def mul (a b : Fraction.Rep R) : Fraction.Rep R :=
   ⟨a.num * b.num, a.den * b.den,
     ExactDivLaws.mul_ne_zero a.den_ne b.den_ne⟩
 
 /-- Sum of two representatives. -/
+@[expose]
 def add (a b : Fraction.Rep R) : Fraction.Rep R :=
   ⟨a.num * b.den + b.num * a.den, a.den * b.den,
     ExactDivLaws.mul_ne_zero a.den_ne b.den_ne⟩
@@ -556,6 +558,18 @@ omit [NonzeroOne R] [DecidableEq R] in
 @[simp]
 theorem mul_ofRep (a b : Fraction.Rep R) :
     ofRep a * ofRep b = ofRep (Fraction.Rep.mul a b) := rfl
+
+omit [DecidableEq R] in
+/-- Multiplying a represented fraction by its embedded denominator recovers
+its embedded numerator. -/
+theorem ofRep_mul_den (a : Fraction.Rep R) :
+    ofRep a * ofCoeff a.den = ofCoeff a.num := by
+  change ofRep a * ofRep ⟨a.den, 1, one_ne_zero⟩ =
+    ofRep ⟨a.num, 1, one_ne_zero⟩
+  rw [mul_ofRep]
+  apply rep_eq
+  unfold Fraction.Rep.Rel Fraction.Rep.mul
+  grind
 
 /-- Inverting an embedded representative applies `invRep`. -/
 @[simp]
